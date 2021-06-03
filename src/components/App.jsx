@@ -21,6 +21,21 @@ function App() {
         
     }
 
+    //this below function is used to delete the note whenever we click the delete button.
+    /*
+    we're probably going to want to somehow remove the note from our notes array. So we can do that using
+    setNotes. And inside setNotes we can get hold of the previous notes just as we did up here. */
+    function  deleteNote(id) {
+        setNotes(prevNotes => {
+        return prevNotes.filter((noteItem,index)=>{
+                return index!==id;
+            });
+        });
+    }
+    /*And remember that the filter function takes a function that accepts up to three arguments. */
+    /*The first one is the value that we're currently looping through in the array. */
+    /*And the second one is the index of this item */
+
 
     return (
         <div>
@@ -34,6 +49,7 @@ function App() {
                 return <Note
                 title = {noteItem.title}
                 content = {noteItem.content}
+                onDelete = {deleteNote}
                 />
             })};
             <Footer />
