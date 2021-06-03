@@ -17,7 +17,7 @@ function App() {
     function addNote(newNote) {
         setNotes(prevNotes =>{
         return [...prevNotes , newNote];
-        })
+        });
         
     }
 
@@ -28,7 +28,14 @@ function App() {
             <CreateArea
             onAdd={addNote}
             />
-            <Note key={1} title="Note title" content="Note content" />
+            {/* 1.4 - to use my notes array and map through it to render a different note 
+            component for each item inside the notes array */};
+            {notes.map((noteItem) => {
+                return <Note
+                title = {noteItem.title}
+                content = {noteItem.content}
+                />
+            })};
             <Footer />
         </div>
     );
