@@ -45,8 +45,10 @@ function App() {
             />
             {/* 1.4 - to use my notes array and map through it to render a different note 
             component for each item inside the notes array */};
-            {notes.map((noteItem) => {
+            {notes.map((noteItem,index) => {
                 return <Note
+                key ={index}
+                id = {index}
                 title = {noteItem.title}
                 content = {noteItem.content}
                 onDelete = {deleteNote}

@@ -4,7 +4,7 @@ function Note(props) {
 
     function handleClick(event)
     {
-        props.onDelete()
+        props.onDelete(props.id)
     }
 
     return (

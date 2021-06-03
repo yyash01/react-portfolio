@@ -36,6 +36,10 @@ function CreateArea(props) {
     // addNote from the App.jsx.And in order for us to be able to add the note we have to pass it back
     // as an input.
         props.onAdd(note);
+        setNote({
+            title: "",
+            content: ""
+        });
         event.preventDefault();
     }
 
