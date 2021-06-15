@@ -44,7 +44,7 @@ function App() {
             onAdd={addNote}
             />
             {/* 1.4 - to use my notes array and map through it to render a different note 
-            component for each item inside the notes array */};
+            component for each item inside the notes array */}
             {notes.map((noteItem,index) => {
                 return <Note
                 key ={index}
@@ -53,7 +53,7 @@ function App() {
                 content = {noteItem.content}
                 onDelete = {deleteNote}
                 />
-            })};
+            })}
             <Footer />
         </div>
     );
